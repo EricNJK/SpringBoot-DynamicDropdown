@@ -11,7 +11,7 @@
     <groupId>com.gfg</groupId>
     <artifactId>spring-boot-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Spring Boot App</name>
+    <name>Dynamic Dropdown From Database</name>
     <description>Spring Boot App</description>
     <url/>
     <licenses>
@@ -39,6 +39,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
