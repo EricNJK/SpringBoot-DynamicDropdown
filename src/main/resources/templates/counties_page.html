@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot App - Counties</title>
+
+    <script type="application/javascript" src="/jquery-3.7.1.js"></script>
+    <script type="application/javascript" src="/ajaxcall.js"></script>
+</head>
+<body>
+<table border="1" cellpadding="10px" cellspacing="5px">
+    <!--/*@thymesVar id="countyList" type="java.util.List<com.gfg.spring.boot.app.model.County>"*/-->
+    <tr>
+        <td>County:</td>
+        <td>
+            <select id="county_list" name="county_list" required>
+                <option disabled selected>Select County</option>
+                <option th:each="country:${countyList}" th:text="${country.name}"></option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Sub-county:</td>
+        <td>
+            <select id="sub_county_list" name="sub_county_list" required>
+                <option disabled selected>Select Sub-County</option>
+                <!--                <option th:each="subCounty:${subCountyList}" th:text="${subCounty.name}"></option>-->
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Village:</td>
+        <td>
+            <select id="village_list" name="village_list" required>
+                <option disabled selected>Select Village</option>
+                <!--                <option th:each="village:${villageList}" th:text="${village.name}"></option>-->
+            </select>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
