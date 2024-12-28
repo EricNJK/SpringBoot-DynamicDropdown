@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MyController {
 
     // Home page html from hard-coded text
-    @GetMapping(path = "/")
+    @GetMapping(path = "/gfg")
     @ResponseBody
     public String home() {
         return """
@@ -20,7 +20,7 @@ public class MyController {
                 """;
     }
 
-    @GetMapping(path = "/gfg")
+    @GetMapping(path = "/gfg/description")
     @ResponseBody
     public String info() {
         return """
