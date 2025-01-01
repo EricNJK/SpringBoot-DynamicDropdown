@@ -1,0 +1,16 @@
+### GET request for County list
+GET http://localhost:8080/counties
+
+### GET sub-counties in Mombasa county
+
+GET http://localhost:8080/sub-counties?countyName=Mombasa
+
+### GET sub-counties in mombasa county (lower case)
+
+GET http://localhost:8080/sub-counties?countyName=mombasa
+
+### GET villages in Likoni sub-county
+
+GET http://localhost:8080/villages?subCountyCode=15
+
+###

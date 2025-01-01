@@ -10,4 +10,9 @@ public interface SubCountyRepository extends CrudRepository<SubCounty, Integer> 
     @Query("select sub_county.id, sub_county.name, sub_county.sub_county_code, sub_county.county_code from sub_county " +
             "inner join county on sub_county.county_code = county.county_code where county.name=:countyName")
     Iterable<SubCounty> findSubCountiesByCountyName(String countyName);
+
+    ///  Ignores case considerations for county name.
+    @Query("select sub_county.id, sub_county.name, sub_county.sub_county_code, sub_county.county_code from sub_county " +
+            "inner join county on sub_county.county_code = county.county_code where LOWER(county.name)=LOWER(:countyName)")
+    Iterable<SubCounty> findSubCountiesByCountyNameIgnoreCase(String countyName);
 }

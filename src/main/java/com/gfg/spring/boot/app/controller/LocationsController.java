@@ -31,13 +31,14 @@ public class LocationsController {
         this.villageRepository = villageRepository;
     }
 
+    // Returns a View with a Model, which includes a list of all counties.
     @GetMapping("/")
     public String countiesThymeleaf(Model model) {
         ArrayList<County> counties = new ArrayList<>();
         countyRepository.findAll()
                 .forEach(cty -> counties.add(cty));
         model.addAttribute("countyList", counties);
-        return "counties_page.html";
+        return "counties_page";
     }
 
     @GetMapping("/counties")
@@ -53,7 +54,7 @@ public class LocationsController {
     @ResponseBody
     public List<SubCounty> subCountiesByCountyName(@RequestParam("countyName") String countyName) {
         ArrayList<SubCounty> subCounties = new ArrayList<>();
-        subCountyRepository.findSubCountiesByCountyName(countyName)
+        subCountyRepository.findSubCountiesByCountyNameIgnoreCase(countyName)
                 .forEach(subCounty -> subCounties.add(subCounty));
         return subCounties;
     }
